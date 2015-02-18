@@ -39,26 +39,26 @@ The `createOrder` property specifies _when_ in the overall deployment sequence t
 
 If `alwaysRun` is set, the commands will also be executed during every upgrade. This would be appropriate for a command to e.g. flush an application cache or trigger a synchronization with a CDN.
 
-The command-line commands are executed as part of a [shell script](https://github.com/xebialabs/community-plugins/blob/master/XL Deploy-udm-plugins/utility-plugins/Advanced Command-plugin/src/main/resources/cmd2/CommandRunner.sh.ftl) or [batch file](https://github.com/xebialabs/community-plugins/blob/master/XL Deploy-udm-plugins/utility-plugins/Advanced Command-plugin/src/main/resources/cmd2/CommandRunner.bat.ftl), so they should conform to shell/batch command syntax. See the examples. 
+The command-line commands are executed as part of a [shell script](https://github.com/xebialabs-communithttps://github.com/xebialabs-community/xld-advanced-command-plugin/tree/master/src/main/resources/advcmd/CommandRunner.bat.ftl), so they should conform to shell/batch command syntax. See the examples. 
 
 # Examples #
 
 ### Run a simple one-time command on target systems at order 50
 
-* Type: `cmd2.Command`
+* Type: `advcmd.Command`
 * `command`: `echo Installation complete!`
 * `createOrder`: 50
 
 ### Run a simple one-time command on target systems with a secret value
 
-* Type: `cmd2.Command`
+* Type: `advcmd.Command`
 * `command`: `run.bat -username test -password ${deployed.secret}`
 * `createOrder`: 50
 * `secret`: {{CMD_SECRET}}
 
 ### Run multiple commands to invoke two batch files at order 85
 
-* Type: `cmd2.Command`
+* Type: `advcmd.Command`
 * `command`: 
 
 ```
@@ -72,7 +72,7 @@ Here, [`CALL`](https://www.microsoft.com/resources/documentation/windows/xp/all/
 
 ### Run a command on target systems at order 90 for each deployment
 
-* Type: `cmd2.Command`
+* Type: `advcmd.Command`
 * `command`: `{{UTILS_PATH}}clearCache`
 * `createOrder`: 90
 * `alwaysRun`: true
@@ -81,7 +81,7 @@ Here, `UTILS_PATH` is different per environment or target system and can be reso
 
 ### Install a registry setting on installation and remove it on uninstall
 
-* Type: `cmd2.CommandFolder`
+* Type: `advcmd.CommandFolder`
 * `command`: `.\add-reg-key.bat files\settings.reg`
 * `createOrder`: 65
 * `undoCommand`: `.\remove-reg-key.bat`
