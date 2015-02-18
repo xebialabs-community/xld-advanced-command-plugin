@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<synthetic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="http://www.xebialabs.com/deployit/synthetic"
+           xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd">
+    
+    <type type="advcmd.DeployedCommandFolder" extends="udm.BaseDeployedArtifact" deployable-type="advcmd.CommandFolder" container-type="overthere.Host">
+      <generate-deployable type="advcmd.CommandFolder" extends="udm.BaseDeployableFolderArtifact" />
+
+      <!-- allow multi-line commands -->
+      <property name="command" size="large" description="The command(s) to run. Need to be correctly formatted and escaped for the target platform. On Windows, the commands entered will be executed within a batch file. Use 'call' to invoke other batch files" />
+      <!-- DefaultOrders.CREATE_RESOURCES -->
+      <property name="createOrder" kind="integer" hidden="false" default="60" label="Run Order" category="Deployment" />
+      <property name="undoCommand" required="false" size="large" description="If set, the command(s) to run to undo the execution of the command. May reference the same files as 'command'. On Windows, the commands entered will be executed within a batch file. Use 'call' to invoke other batch files" />
+      <!-- DefaultOrders.DESTROY_RESOURCES -->
+      <property name="destroyOrder" kind="integer" hidden="false" default="40" label="Undo Order" category="Deployment" />
+      <property name="envVars" kind="map_string_string" required="false" />
+      <property name="alwaysRun" kind="boolean" required="false" />
+      <!-- DefaultOrders.CREATE_RESOURCES -->
+      <property name="noopOrder" kind="integer" hidden="false" default="60" label="Rerun Order" category="Deployment" description="The order to re-run the command at if 'alwaysRun' is true"/>
+      <!-- admin properties -->
+   <!--    <property name="createScript" hidden="true" default="cmd2/CommandRunner" />
+      <property name="createVerb" hidden="true" default="Run" />
+      <property name="noopScript" hidden="true" default="&lt;#if deployed.alwaysRun!false&gt;cmd2/CommandRunner&lt;/#if&gt;" />
+      <property name="noopVerb" hidden="true" default="Run" />
+      <property name="destroyScript" hidden="true" default="&lt;#if deployed.undoCommand??&gt;cmd2/UndoCommandRunner&lt;/#if&gt;" />
+      <property name="destroyVerb" hidden="true" default="Undo" />
+      <property name="executionFlagPattern" hidden="true" default="*.sh"/> -->
+    </type>
+
+    <type type="advcmd.DeployedCommand" extends="udm.BaseDeployed" deployable-type="advcmd.Command" container-type="overthere.Host">
+      <generate-deployable type="advcmd.Command" extends="udm.BaseDeployable" />
+
+      <!-- allow multi-line commands -->
+      <property name="command" size="large" description="The command(s) to run. Needs to be correctly formatted and escaped for the target platform. On Windows, the commands entered will be executed within a batch file. Use 'call' to invoke other batch files" />
+      <property name="secret" password="true" required="false" description="Can be used within command and undoCommand using ${deployed.secret}"/>
+      <!-- DefaultOrders.CREATE_RESOURCES -->
+      <property name="createOrder" kind="integer" hidden="false" default="60" label="Run Order" category="Deployment" />
+      <property name="undoCommand" required="false" size="large" description="If set, the command(s) to run to undo the execution of the command. May reference the same files as 'command'. On Windows, the commands entered will be executed within a batch file. Use 'call' to invoke other batch files" />
+      <!-- DefaultOrders.DESTROY_RESOURCES -->
+      <property name="destroyOrder" kind="integer" hidden="false" default="40" label="Undo Order" category="Deployment" />
+      <property name="envVars" kind="map_string_string" required="false" />
+      <property name="alwaysRun" kind="boolean" required="false" />
+      <!-- DefaultOrders.CREATE_RESOURCES -->
+      <property name="noopOrder" kind="integer" hidden="false" default="60" label="Rerun Order" category="Deployment" description="The order to re-run the command at if 'alwaysRun' is true"/>
+      <!-- admin properties -->
+    <!--   <property name="createScript" hidden="true" default="cmd2/CommandRunner" />
+      <property name="createVerb" hidden="true" default="Run" />
+      <property name="noopScript" hidden="true" default="&lt;#if deployed.alwaysRun!false&gt;cmd2/CommandRunner&lt;/#if&gt;" />
+      <property name="noopVerb" hidden="true" default="Run" />
+      <property name="destroyScript" hidden="true" default="&lt;#if deployed.undoCommand??&gt;cmd2/UndoCommandRunner&lt;/#if&gt;" />
+      <property name="destroyVerb" hidden="true" default="Undo" /> -->
+    </type>
+  
+</synthetic>

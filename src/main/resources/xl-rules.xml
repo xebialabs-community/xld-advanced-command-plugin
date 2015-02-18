@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!--
+    Note: If you modify this file and automatic reloading is disabled in `planner.conf`, you must restart the XL Deploy server.
+-->
+<rules xmlns="http://www.xebialabs.com/xl-deploy/xl-rules">
+    <!-- Add your <rule ...> and <disable-rule ...> elements here -->
+    <!-- Create -->
+    <rule name="advcmd.DeployedCommand.CREATE" scope="deployed">
+    <conditions>
+        <type>advcmd.DeployedCommandFolder</type>
+        <type>advcmd.DeployedCommand</type>
+        <operation>CREATE</operation>
+    </conditions>
+    <steps>
+       <os-script>
+         <script>advcmd/CommandRunner</script>
+       </os-script>
+    </steps>
+</rule>
+    <!-- Noop -->
+    <rule name="advcmd.DeployedCommand.NOOP" scope="deployed">
+    <conditions>
+        <type>advcmd.DeployedCommandFolder</type>
+        <type>advcmd.DeployedCommand</type>
+        <operation>NOOP</operation>
+        <expression>deployed.alwaysRun</expression>
+    </conditions>
+    <steps>
+       <os-script>
+         <script>advcmd/CommandRunner</script>
+       </os-script>
+    </steps>
+</rule>
+    <!-- Destroy -->
+    <rule name="advcmd.DeployedCommand.DESTROY" scope="deployed">
+    <conditions>
+        <type>advcmd.DeployedCommandFolder</type>
+         <type>advcmd.DeployedCommand</type>
+        <operation>DESTROY</operation>
+        <expression>deployed.undoCommand</expression>
+    </conditions>
+    <steps>
+       <os-script>
+         <script>advcmd/UndoCommandRunner</script>
+       </os-script>
+    </steps>
+</rule>
+    </rules>
