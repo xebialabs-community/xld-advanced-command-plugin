@@ -6,7 +6,7 @@ The Advanced Command Plugin is not an ideal way to model your deployments.  May 
 
 # Overview #
 
-The Advanced Command plugin is an alternative to the standard XL Deploy [command plugin](http://docs.xebialabs.com/releases/latest/XL Deploy/commandPluginManual.html) that supports commands and commands with resources and re-uses generic plugin replacement and templating functionality.
+The Advanced Command plugin is an alternative to the standard XL Deploy [command plugin](https://docs.xebialabs.com/xl-deploy/4.5.x/commandPluginManual.html) that supports commands and commands with resources and re-uses generic plugin replacement and templating functionality.
 
 The Advanced Command plugin is intended for actions that are required for a **specific application** or application version, such as running an app-specific configuration script. To configure XL Deploy to support a new middleware stack, please consider the [generic](http://docs.xebialabs.com/releases/latest/XL Deploy/genericPluginManual.html), [Python](http://docs.xebialabs.com/releases/latest/XL Deploy/pythonPluginManual.html) or PowerShell plugins instead. 
 
