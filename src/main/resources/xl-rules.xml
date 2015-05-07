@@ -20,6 +20,7 @@
     </conditions>
     <steps>
        <os-script>
+        <order expression="true">deployed.createOrder</order>
          <script>advcmd/CommandRunner</script>
        </os-script>
     </steps>
@@ -35,6 +36,7 @@
     <steps>
        <os-script>
          <script>advcmd/CommandRunner</script>
+         <order expression="true">deployed.noopOrder</order>
        </os-script>
     </steps>
 </rule>
@@ -49,6 +51,7 @@
     <steps>
        <os-script>
          <script>advcmd/UndoCommandRunner</script>
+         <order expression="true">deployed.destroyOrder</order>
        </os-script>
     </steps>
 </rule>
