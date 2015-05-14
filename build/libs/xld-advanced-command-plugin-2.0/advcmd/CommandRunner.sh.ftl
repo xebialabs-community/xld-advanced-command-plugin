@@ -7,25 +7,21 @@
 -->
 #!/bin/sh
 
-<#assign envVars=previousDeployed.envVars />
+<#assign envVars=deployed.envVars />
 <#list envVars?keys as envVar>
 ${envVar}="${envVars[envVar]}"
 export ${envVar}
 </#list>
 
-<#if previousDeployed.file??>
+<#if deployed.file??>
 # do not remove - this actually triggers the upload
-cd "${previousDeployed.file}"
+cd "${deployed.file}"
 </#if>
 
-<#if previousDeployed.executionFlagPattern?has_content>
-chmod u+x ${previousDeployed.executionFlagPattern}
+<#if deployed.executionFlagPattern?has_content>
+chmod u+x ${deployed.executionFlagPattern}
 </#if>
-<#if previousDeployed??>
-${previousDeployed.undoCommand}
-<#else>
-echo "nothing to do"
-</#if>
+${deployed.command}
 
 COMMAND_EXIT_CODE=$?
 

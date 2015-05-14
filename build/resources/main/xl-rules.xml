@@ -46,12 +46,12 @@
         <type>advcmd.DeployedCommandFolder</type>
          <type>advcmd.DeployedCommand</type>
         <operation>DESTROY</operation>
-        <expression>previousDeployed.undoCommand</expression>
+        <expression>deployed.undoCommand</expression>
     </conditions>
     <steps>
        <os-script>
          <script>advcmd/UndoCommandRunner</script>
-         <order expression="true">previousDeployed.destroyOrder</order>
+         <order expression="true">deployed.destroyOrder</order>
        </os-script>
     </steps>
 </rule>

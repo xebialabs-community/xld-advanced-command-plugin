@@ -5,26 +5,28 @@
     FOR A PARTICULAR PURPOSE. THIS CODE AND INFORMATION ARE NOT SUPPORTED BY XEBIALABS.
 
 -->
-@echo off
-setlocal
+#!/bin/sh
 
-<#assign envVars=previousDeployed.envVars />
+<#assign envVars=deployed.envVars />
 <#list envVars?keys as envVar>
-set ${envVar}=${envVars[envVar]}
+${envVar}="${envVars[envVar]}"
+export ${envVar}
 </#list>
 
-<#if previousDeployed.file??>
-REM do not remove - this actually triggers the upload
-cd /d "${previousDeployed.file}"
+<#if deployed.file??>
+# do not remove - this actually triggers the upload
+cd "${deployed.file}"
 </#if>
 
-<#if previousDeployed??>
-${previousDeployed.undoCommand}
+<#if deployed.executionFlagPattern?has_content>
+chmod u+x ${deployed.executionFlagPattern}
+</#if>
+<#if deployed??>
+${deployed.undoCommand}
 <#else>
 echo "nothing to do"
 </#if>
 
-set COMMAND_EXIT_CODE=%ERRORLEVEL%
+COMMAND_EXIT_CODE=$?
 
-endlocal
-exit %COMMAND_EXIT_CODE%
+exit $COMMAND_EXIT_CODE

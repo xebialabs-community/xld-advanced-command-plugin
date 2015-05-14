@@ -8,18 +8,18 @@
 @echo off
 setlocal
 
-<#assign envVars=previousDeployed.envVars />
+<#assign envVars=deployed.envVars />
 <#list envVars?keys as envVar>
 set ${envVar}=${envVars[envVar]}
 </#list>
 
-<#if previousDeployed.file??>
+<#if deployed.file??>
 REM do not remove - this actually triggers the upload
-cd /d "${previousDeployed.file}"
+cd /d "${deployed.file}"
 </#if>
 
-<#if previousDeployed??>
-${previousDeployed.undoCommand}
+<#if deployed??>
+${deployed.undoCommand}
 <#else>
 echo "nothing to do"
 </#if>

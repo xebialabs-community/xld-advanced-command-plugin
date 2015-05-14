@@ -25,7 +25,13 @@
       <!-- DefaultOrders.CREATE_RESOURCES -->
       <property name="noopOrder" kind="integer" hidden="false" default="60" label="Rerun Order" category="Deployment" description="The order to re-run the command at if 'alwaysRun' is true"/>
       <!-- admin properties -->
-
+   <!--    <property name="createScript" hidden="true" default="cmd2/CommandRunner" />
+      <property name="createVerb" hidden="true" default="Run" />
+      <property name="noopScript" hidden="true" default="&lt;#if deployed.alwaysRun!false&gt;cmd2/CommandRunner&lt;/#if&gt;" />
+      <property name="noopVerb" hidden="true" default="Run" />
+      <property name="destroyScript" hidden="true" default="&lt;#if deployed.undoCommand??&gt;cmd2/UndoCommandRunner&lt;/#if&gt;" />
+      <property name="destroyVerb" hidden="true" default="Undo" />
+      <property name="executionFlagPattern" hidden="true" default="*.sh"/> -->
     </type>
 
     <type type="advcmd.DeployedCommand" extends="udm.BaseDeployed" deployable-type="advcmd.Command" container-type="overthere.Host">
@@ -44,6 +50,12 @@
       <!-- DefaultOrders.CREATE_RESOURCES -->
       <property name="noopOrder" kind="integer" hidden="false" default="60" label="Rerun Order" category="Deployment" description="The order to re-run the command at if 'alwaysRun' is true"/>
       <!-- admin properties -->
+    <!--   <property name="createScript" hidden="true" default="cmd2/CommandRunner" />
+      <property name="createVerb" hidden="true" default="Run" />
+      <property name="noopScript" hidden="true" default="&lt;#if deployed.alwaysRun!false&gt;cmd2/CommandRunner&lt;/#if&gt;" />
+      <property name="noopVerb" hidden="true" default="Run" />
+      <property name="destroyScript" hidden="true" default="&lt;#if deployed.undoCommand??&gt;cmd2/UndoCommandRunner&lt;/#if&gt;" />
+      <property name="destroyVerb" hidden="true" default="Undo" /> -->
     </type>
   
 </synthetic>
