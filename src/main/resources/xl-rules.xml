@@ -22,6 +22,7 @@
        <os-script>
         <order expression="true">deployed.createOrder</order>
          <script>advcmd/CommandRunner</script>
+         <create-target-path>false</create-target-path>
        </os-script>
     </steps>
 </rule>
@@ -36,6 +37,7 @@
     <steps>
        <os-script>
          <script>advcmd/CommandRunner</script>
+         <create-target-path>false</create-target-path>
          <order expression="true">deployed.noopOrder</order>
        </os-script>
     </steps>
@@ -51,6 +53,7 @@
     <steps>
        <os-script>
          <script>advcmd/UndoCommandRunner</script>
+         <create-target-path>false</create-target-path>
          <order expression="true">previousDeployed.destroyOrder</order>
        </os-script>
     </steps>
