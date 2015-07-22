@@ -55,4 +55,18 @@
        </os-script>
     </steps>
 </rule>
+<!-- File -->
+    <rule name="advcmd.Script" scope="deployed">
+    <conditions>
+        <type>advcmd.Script</type>
+        <operation>CREATE</operation>
+        <operation>MODIFY</operation>
+    </conditions>
+    <steps>
+       <os-script>
+         <script>advcmd/ExecuteScript</script>
+         <order expression="true">deployed.createOrder</order>
+       </os-script>
+    </steps>
+</rule>
     </rules>

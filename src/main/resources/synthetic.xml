@@ -45,5 +45,21 @@
       <property name="noopOrder" kind="integer" hidden="false" default="60" label="Rerun Order" category="Deployment" description="The order to re-run the command at if 'alwaysRun' is true"/>
       <!-- admin properties -->
     </type>
+<!-- file -->
+    <type type="advcmd.Script" extends="udm.BaseDeployedArtifact" deployable-type="advcmd.File" container-type="overthere.Host">
+      <generate-deployable type="advcmd.File" extends="udm.BaseDeployableFileArtifact" />
+
+      <!-- allow multi-line commands -->
+      <!-- DefaultOrders.CREATE_RESOURCES -->
+      <property name="createOrder" kind="integer" hidden="false" default="60" label="Run Order" category="Deployment" />
+      <!-- DefaultOrders.DESTROY_RESOURCES -->
+      <property name="destroyOrder" kind="integer" hidden="false" default="40" label="Undo Order" category="Deployment" />
+      <property name="envVars" kind="map_string_string" required="false" />
+      <property name="alwaysRun" kind="boolean" required="false" hidden="true" />
+      <!-- DefaultOrders.CREATE_RESOURCES -->
+      <property name="noopOrder" kind="integer" hidden="false" default="60" label="Rerun Order" category="Deployment" description="The order to re-run the command at if 'alwaysRun' is true"/>
+      <!-- admin properties -->
+      <property name="location" kind="string" hidden="true" default="100" label="Script Location" category="Deployment" description="The location of the script to be run."/>
+    </type>
   
 </synthetic>
