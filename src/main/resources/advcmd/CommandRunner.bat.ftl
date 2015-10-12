@@ -13,9 +13,12 @@ setlocal
 set ${envVar}=${envVars[envVar]}
 </#list>
 
+<#if deployed.file??>
+REM do not remove - this actually triggers the upload
+cd /d "${deployed.file}"
+</#if>
 
-echo ${deployed.file.path}
-${deployed.file.path}
+${deployed.command}
 
 set COMMAND_EXIT_CODE=%ERRORLEVEL%
 

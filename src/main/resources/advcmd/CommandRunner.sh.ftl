@@ -5,19 +5,24 @@
     FOR A PARTICULAR PURPOSE. THIS CODE AND INFORMATION ARE NOT SUPPORTED BY XEBIALABS.
 
 -->
-@echo off
-setlocal
+#!/bin/sh
 
 <#assign envVars=deployed.envVars />
 <#list envVars?keys as envVar>
-set ${envVar}=${envVars[envVar]}
+${envVar}="${envVars[envVar]}"
+export ${envVar}
 </#list>
 
+<#if deployed.file??>
+# do not remove - this actually triggers the upload
+cd "${deployed.file}"
+</#if>
 
-echo ${deployed.file.path}
-${deployed.file.path}
+<#if deployed.executionFlagPattern?has_content>
+chmod u+x ${deployed.executionFlagPattern}
+</#if>
+${deployed.command}
 
-set COMMAND_EXIT_CODE=%ERRORLEVEL%
+COMMAND_EXIT_CODE=$?
 
-endlocal
-exit %COMMAND_EXIT_CODE%
+exit $COMMAND_EXIT_CODE

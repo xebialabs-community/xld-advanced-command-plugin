@@ -5,19 +5,19 @@
     FOR A PARTICULAR PURPOSE. THIS CODE AND INFORMATION ARE NOT SUPPORTED BY XEBIALABS.
 
 -->
-@echo off
-setlocal
+#!/bin/sh
 
 <#assign envVars=deployed.envVars />
 <#list envVars?keys as envVar>
-set ${envVar}=${envVars[envVar]}
+${envVar}="${envVars[envVar]}"
+export ${envVar}
 </#list>
 
-
 echo ${deployed.file.path}
+chmod u+x ${deployed.file.path}
+ls -ltr ${deployed.file.path}
 ${deployed.file.path}
 
-set COMMAND_EXIT_CODE=%ERRORLEVEL%
+COMMAND_EXIT_CODE=$?
 
-endlocal
-exit %COMMAND_EXIT_CODE%
+exit $COMMAND_EXIT_CODE
