@@ -4,6 +4,20 @@
 
 The Advanced Command Plugin is not an ideal way to model your deployments.  May open vulnerabilities if used incorrectly.
 
+# CI status #
+
+[![Build Status][xld-advanced-command-travis-image] ][xld-advanced-command-travis-url]
+[![Codacy Badge][xld-advanced-command-codacy-image] ][xld-advanced-command-codacy-url]
+[![Code Climate][xld-advanced-command-code-climate-image] ][xld-advanced-command-code-climate-url]
+
+[xld-advanced-command-travis-image]: https://travis-ci.org/xebialabs-community/xld-advanced-command-plugin.svg?branch=master
+[xld-advanced-command-travis-url]: https://travis-ci.org/xebialabs-community/xld-advanced-command-plugin
+[xld-advanced-command-codacy-image]: https://api.codacy.com/project/badge/grade/8f12f3c6576646d29db5af2fefb377b5
+[xld-advanced-command-codacy-url]: https://www.codacy.com/app/joris-dewinne/xld-advanced-command-plugin
+[xld-advanced-command-code-climate-image]: https://codeclimate.com/github/xebialabs-community/xld-advanced-command-plugin/badges/gpa.svg
+[xld-advanced-command-code-climate-url]: https://codeclimate.com/github/xebialabs-community/xld-advanced-command-plugin
+
+
 # Overview #
 
 The Advanced Command plugin is an alternative to the standard XL Deploy [command plugin](https://docs.xebialabs.com/xl-deploy/4.5.x/commandPluginManual.html) that supports commands and commands with resources and re-uses generic plugin replacement and templating functionality.
