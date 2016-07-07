@@ -46,7 +46,7 @@
         <property name="command" size="large"
                   description="The command(s) to run. Needs to be correctly formatted and escaped for the target platform. On Windows, the commands entered will be executed within a batch file. Use 'call' to invoke other batch files"/>
         <property name="secret" password="true" required="false"
-                  description="Can be used within command and undoCommand using ${deployed.secret}"/>
+                  description="Can be used within command, noopCommand, and undoCommand using ${deployed.secret} or ${previousDeployed.secret}"/>
         <!-- DefaultOrders.CREATE_RESOURCES -->
         <property name="createOrder" kind="integer" hidden="false" default="60" label="Run Order"
                   category="Deployment"/>

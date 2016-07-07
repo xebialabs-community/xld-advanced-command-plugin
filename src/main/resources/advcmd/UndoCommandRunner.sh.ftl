@@ -22,7 +22,8 @@ cd "${previousDeployed.file}"
 chmod u+x ${previousDeployed.executionFlagPattern}
 </#if>
 <#if previousDeployed??>
-${previousDeployed.undoCommand}
+<#assign interpretedCommand=previousDeployed.undoCommand?interpret>
+<@interpretedCommand />
 <#else>
 echo "nothing to do"
 </#if>

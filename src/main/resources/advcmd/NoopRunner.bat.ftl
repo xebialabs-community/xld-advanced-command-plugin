@@ -18,7 +18,8 @@ REM do not remove - this actually triggers the upload
 cd /d "${deployed.file}"
 </#if>
 
-${deployed.noopCommand}
+<#assign interpretedCommand=deployed.noopCommand?interpret>
+<@interpretedCommand />
 
 set COMMAND_EXIT_CODE=%ERRORLEVEL%
 

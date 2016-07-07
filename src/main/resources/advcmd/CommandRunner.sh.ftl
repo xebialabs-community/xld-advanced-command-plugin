@@ -21,7 +21,9 @@ cd "${deployed.file}"
 <#if deployed.executionFlagPattern?has_content>
 chmod u+x ${deployed.executionFlagPattern}
 </#if>
-${deployed.command}
+
+<#assign interpretedCommand=deployed.command?interpret>
+<@interpretedCommand />
 
 COMMAND_EXIT_CODE=$?
 
