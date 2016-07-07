@@ -19,7 +19,8 @@ cd /d "${previousDeployed.file}"
 </#if>
 
 <#if previousDeployed??>
-${previousDeployed.undoCommand}
+<#assign interpretedCommand=previousDeployed.undoCommand?interpret>
+<@interpretedCommand />
 <#else>
 echo "nothing to do"
 </#if>

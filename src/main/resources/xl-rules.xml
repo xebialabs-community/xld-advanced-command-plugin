@@ -20,8 +20,8 @@
         </conditions>
         <steps>
             <os-script>
-                <order expression="true">deployed.createOrder</order>
                 <script>advcmd/CommandRunner</script>
+                <order expression="true">deployed.createOrder</order>
             </os-script>
         </steps>
     </rule>
