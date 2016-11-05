@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xl:export xmlns:xl="http://www.xebialabs.com/xl-export">
+  <xl:metadata>
+    <xl:exported-by>admin</xl:exported-by>
+    <xl:exported-at>2016-11-05T00:31:02.672+0000</xl:exported-at>
+    <xl:exported-format-version>5.5.5</xl:exported-format-version>
+    <xl:encryption-key-fingerprint>f6094d333c0736339884d1fe38d9c54e14019ac9</xl:encryption-key-fingerprint>
+  </xl:metadata>
+  <xl:exported-configuration-items exported-root-id="/">
+    <udm.DeploymentPackage id="Applications/TestApp/2.0" created-by="admin" created-at="2016-11-05T00:23:13.183+0000" last-modified-by="admin" last-modified-at="2016-11-05T00:23:13.183+0000">
+      <orchestrator />
+      <applicationDependencies />
+    </udm.DeploymentPackage>
+    <udm.DeploymentPackage id="Applications/TestApp/2.1" created-by="admin" created-at="2016-11-05T00:23:13.183+0000" last-modified-by="admin" last-modified-at="2016-11-05T00:23:13.183+0000">
+      <orchestrator />
+      <applicationDependencies />
+    </udm.DeploymentPackage>
+    <udm.Application id="Applications/TestApp" created-by="admin" created-at="2016-11-05T00:22:48.244+0000" last-modified-by="admin" last-modified-at="2016-11-05T00:26:35.788+0000">
+      <lastVersion>2.1</lastVersion>
+    </udm.Application>
+    <advcmd.Command id="Applications/TestApp/2.0/adv_cmd" created-by="admin" created-at="2016-11-05T00:25:13.299+0000" last-modified-by="admin" last-modified-at="2016-11-05T00:27:29.944+0000">
+      <tags />
+      <command>touch /tmp/testfile_advcmd</command>
+      <createOrder>1</createOrder>
+      <destroyOrder>2</destroyOrder>
+      <envVars />
+      <alwaysRun>true</alwaysRun>
+      <noopOrder>3</noopOrder>
+    </advcmd.Command>
+    <advcmd.Command id="Applications/TestApp/2.1/adv_cmd" created-by="admin" created-at="2016-11-05T00:25:13.299+0000" last-modified-by="admin" last-modified-at="2016-11-05T00:27:36.467+0000">
+      <tags />
+      <command>touch /tmp/testfile_advcmd</command>
+      <createOrder>1</createOrder>
+      <destroyOrder>2</destroyOrder>
+      <envVars />
+      <alwaysRun>true</alwaysRun>
+      <noopOrder>3</noopOrder>
+    </advcmd.Command>
+    <udm.Environment id="Environments/testenv" created-by="admin" created-at="2016-11-05T00:28:04.100+0000" last-modified-by="admin" last-modified-at="2016-11-05T00:28:04.100+0000">
+      <members>
+        <ci ref="Infrastructure/testhost" />
+      </members>
+      <dictionaries />
+      <triggers />
+    </udm.Environment>
+    <overthere.LocalHost id="Infrastructure/testhost" created-by="admin" created-at="2016-11-05T00:27:53.362+0000" last-modified-by="admin" last-modified-at="2016-11-05T00:27:53.362+0000">
+      <tags />
+      <os>UNIX</os>
+    </overthere.LocalHost>
+  </xl:exported-configuration-items>
+</xl:export>
