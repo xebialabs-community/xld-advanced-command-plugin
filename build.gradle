@@ -1,15 +1,21 @@
 import org.apache.tools.ant.filters.ReplaceTokens
 plugins {
-    id "com.github.hierynomus.license" version "0.13.0"
-    id "com.xebialabs.xldp" version "1.0.5"
+  id "com.github.hierynomus.license" version "0.13.0"
+  id "com.xebialabs.xldp" version "1.0.5"
+  id "com.xebialabs.xld.docker" version "1.2.2"
 }
-
-version="3.1.1"
 
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'eclipse'
 apply plugin: 'maven'
+
+xldDocker {
+  compileVersion = 'v5.5.5.6'
+  runVersion = 'v5.5.5.7'
+}
+
+version="3.1.1"
 
 processResources.configure {
   filter ReplaceTokens, tokens: [
