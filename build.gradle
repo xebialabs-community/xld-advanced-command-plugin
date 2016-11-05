@@ -1,6 +1,6 @@
 import org.apache.tools.ant.filters.ReplaceTokens
 plugins {
-    id "com.github.hierynomus.license" version "0.12.1"
+    id "com.github.hierynomus.license" version "0.13.0"
     id "com.xebialabs.xldp" version "1.0.5"
 }
 
