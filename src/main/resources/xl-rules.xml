@@ -17,6 +17,7 @@
             <type>advcmd.DeployedCommandFolder</type>
             <type>advcmd.DeployedCommand</type>
             <operation>CREATE</operation>
+            <operation>MODIFY</operation>
         </conditions>
         <steps>
             <os-script>
@@ -61,6 +62,7 @@
             <type>advcmd.DeployedCommandFolder</type>
             <type>advcmd.DeployedCommand</type>
             <operation>DESTROY</operation>
+            <operation>MODIFY</operation>
             <expression>previousDeployed.undoCommand</expression>
         </conditions>
         <steps>
