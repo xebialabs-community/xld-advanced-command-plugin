@@ -45,7 +45,7 @@ Place the plugin JAR file into your `SERVER_HOME/plugins` directory.
 
 The Advanced Command plugin allows you to execute arbitrary sequences of commands during a deployment, optionally making use of additional files.
 
-The Advanced Command plugin defines 3 types of deployable items that you can add to your [deployment packages](http://docs.xebialabs.com/releases/latest/XL Deploy/packagingmanual.html): 
+The Advanced Command plugin defines 3 types of deployable items that you can add to your [deployment packages](https://docs.xebialabs.com/xl-deploy/concept/key-xl-deploy-concepts.html): 
 + [`advcmd.Command`](https://github.com/xebialabs-community/xld-advanced-command-plugin.git):
   A `Command` simply defines a sequence of command-line commands to be executed;
 + [`advcmd.CommandFolder`](https://github.com/xebialabs-community/xld-advanced-command-plugin.git): 

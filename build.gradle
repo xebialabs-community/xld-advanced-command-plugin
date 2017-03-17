@@ -18,7 +18,7 @@ xlDocker {
   runPortMapping = '14516:4516'
 }
 
-version="3.2.0"
+version="3.2.1"
 
 processResources.configure {
   filter ReplaceTokens, tokens: [
