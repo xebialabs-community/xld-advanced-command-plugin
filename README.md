@@ -31,7 +31,7 @@ See the Rules tutorial (https://docs.xebialabs.com/xl-deploy/4.5.x/rulestutorial
 # Requirements #
 
 * **XL Deploy requirements**
-	* **XL Deploy**: version 4.5.2
+	* **XL Deploy**: version 5.1+
 
 # Installation #
 
