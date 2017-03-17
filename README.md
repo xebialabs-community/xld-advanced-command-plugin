@@ -9,6 +9,7 @@ The Advanced Command Plugin is not an ideal way to model your deployments.  May 
 [![Build Status][xld-advanced-command-travis-image] ][xld-advanced-command-travis-url]
 [![Codacy Badge][xld-advanced-command-codacy-image] ][xld-advanced-command-codacy-url]
 [![Code Climate][xld-advanced-command-code-climate-image] ][xld-advanced-command-code-climate-url]
+[![License: MIT][xld-advanced-command-plugin-license-image] ][xld-advanced-command-plugin-license-url]
 
 [xld-advanced-command-travis-image]: https://travis-ci.org/xebialabs-community/xld-advanced-command-plugin.svg?branch=master
 [xld-advanced-command-travis-url]: https://travis-ci.org/xebialabs-community/xld-advanced-command-plugin
@@ -16,6 +17,9 @@ The Advanced Command Plugin is not an ideal way to model your deployments.  May 
 [xld-advanced-command-codacy-url]: https://www.codacy.com/app/joris-dewinne/xld-advanced-command-plugin
 [xld-advanced-command-code-climate-image]: https://codeclimate.com/github/xebialabs-community/xld-advanced-command-plugin/badges/gpa.svg
 [xld-advanced-command-code-climate-url]: https://codeclimate.com/github/xebialabs-community/xld-advanced-command-plugin
+[xld-advanced-command-plugin-license-image]: https://img.shields.io/badge/License-MIT-yellow.svg
+[xld-advanced-command-plugin-license-url]: https://opensource.org/licenses/MIT
+
 
 
 # Overview #
