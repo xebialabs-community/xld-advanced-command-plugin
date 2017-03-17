@@ -19,7 +19,7 @@ export ${envVar}
 
 <#if deployed.file??>
 # do not remove - this actually triggers the upload
-cd "${deployed.file}"
+cd "${deployed.file.path}"
 </#if>
 
 <#if deployed.executionFlagPattern?has_content>

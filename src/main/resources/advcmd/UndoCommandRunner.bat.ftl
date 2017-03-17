@@ -19,7 +19,7 @@ set ${envVar}=${envVars[envVar]}
 
 <#if previousDeployed.file??>
 REM do not remove - this actually triggers the upload
-cd /d "${previousDeployed.file}"
+cd /d "${previousDeployed.file.path}"
 </#if>
 
 <#if previousDeployed??>

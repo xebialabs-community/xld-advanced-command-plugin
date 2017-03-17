@@ -19,7 +19,7 @@ set ${envVar}=${envVars[envVar]}
 
 <#if deployed.file??>
 REM do not remove - this actually triggers the upload
-cd /d "${deployed.file}"
+cd /d "${deployed.file.path}"
 </#if>
 
 <#assign interpretedCommand=deployed.command?interpret>
