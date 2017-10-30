@@ -71,7 +71,7 @@ If `alwaysRun` is set, the commands will also be executed during every upgrade. 
 
 The command-line commands are executed as part of a [shell script](https://github.com/xebialabs-communithttps://github.com/xebialabs-community/xld-advanced-command-plugin/tree/master/src/main/resources/advcmd/CommandRunner.bat.ftl), so they should conform to shell/batch command syntax. See the examples. 
 
-# Examples #
+## Examples
 
 ### Run a simple one-time command on target systems at order 50
 
