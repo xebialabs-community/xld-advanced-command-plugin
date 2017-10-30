@@ -1,10 +1,4 @@
-# Advanced Command plugin #
-
-# Warning: #
-
-The Advanced Command Plugin is not an ideal way to model your deployments.  May open vulnerabilities if used incorrectly.
-
-# CI status #
+# XL Deploy Advanced Command plugin
 
 [![Build Status][xld-advanced-command-travis-image] ][xld-advanced-command-travis-url]
 [![Codacy Badge][xld-advanced-command-codacy-image] ][xld-advanced-command-codacy-url]
@@ -23,8 +17,17 @@ The Advanced Command Plugin is not an ideal way to model your deployments.  May 
 [xld-advanced-command-plugin-license-url]: https://opensource.org/licenses/MIT
 [xld-advanced-command-plugin-downloads-image]: https://img.shields.io/github/downloads/xebialabs-community/xld-advanced-command-plugin/total.svg
 
+## Warning
 
-# Overview #
+The Advanced Command Plugin is not an ideal way to model your deployments.  May open vulnerabilities if used incorrectly.
+
+## Preface
+
+This document describes the functionality provided by the XL Deploy Advanced Command plugin.
+
+See the [XL Deploy reference manual](https://docs.xebialabs.com/xl-deploy) for background information on XL Deploy and deployment automation concepts.  
+
+## Overview
 
 The Advanced Command plugin is an alternative to the standard XL Deploy [command plugin](https://docs.xebialabs.com/xl-deploy/4.5.x/commandPluginManual.html) that supports commands and commands with resources and re-uses generic plugin replacement and templating functionality.
 
@@ -34,16 +37,17 @@ See the [customization manual](docs.xebialabs.com/releases/latest/XL Deploy/cust
 
 See the Rules tutorial (https://docs.xebialabs.com/xl-deploy/4.5.x/rulestutorial.html)
 
-# Requirements #
+## Requirements
 
 * **XL Deploy requirements**
-	* **XL Deploy**: version 5.1+
+	* **XL Deploy**: version 5.5+
 
-# Installation #
+## Installation
 
-Place the plugin JAR file into your `SERVER_HOME/plugins` directory.
+* Copy the latest JAR file from the [releases page](https://github.com/xebialabs-community/xld-advanced-command-plugin/releases) into the `XL_DEPLOY_SERVER/plugins` directory.
+* Restart the XL Deploy server.
 
-# Usage #
+## Usage
 
 The Advanced Command plugin allows you to execute arbitrary sequences of commands during a deployment, optionally making use of additional files.
 
