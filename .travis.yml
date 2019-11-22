@@ -6,7 +6,8 @@ deploy:
   provider: releases
   api_key:
     secure: X3wr6SXr4DjhJVL/JHGlz52yUTweFZwLFkJCiu3GV80OdCoZvMy5otcC6ZYZk1kFUHs8f1Dh3IZYYVdu7RChC76OoHc9EUYh1hQNdNmfNA/cyGubXegHBj8fKbME/cMDRoRyXC7zXCJ+m2czgfA/6NCaO8I9ttufBKrU+tVEdqU=
-  file: build/distributions/xld-advanced-command-plugin-3.2.1.xldp
+  file_glob: true
+  file: build/distributions/*
   skip_cleanup: true
   on:
     all_branches: true
