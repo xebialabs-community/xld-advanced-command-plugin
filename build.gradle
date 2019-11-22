@@ -19,7 +19,13 @@ xlDocker {
   runPortMapping = '14516:4516'
 }
 
+if (!project.hasProperty('release.scope')) {
+  project.ext['release.scope'] = 'patch'
+}
 
+if (!project.hasProperty('release.useLastTag')) {
+  project.ext['release.useLastTag'] = true
+}
 
 processResources.configure {
   filter ReplaceTokens, tokens: [
